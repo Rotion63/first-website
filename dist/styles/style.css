@@ -49,10 +49,43 @@ body{
     text-decoration: underline;
 }
 .home .paragraph:nth-child(2){
-    color: red;
+    color: rgb(14, 51, 51);
     font-size: 40px;
 }
+.noteContainer{
+    display: grid;
+    justify-content: start;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 10px;
+  }
+  .cmNotes{
+      color: rgb(34, 59, 105);
+  }
+.books{
+    background: rgb(235, 179, 75);
+    border: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 0.01px;
+    margin-left: 2.5%;
+    max-width: 250px;
+}
+.bookName{
+    font-weight: bold;
+    color: rgb(23, 80, 82);
+}
+.bookChapter{
+    font-size: 20px;
+    text-decoration: underline;
+}
+.bookChapter:hover{
+    cursor: pointer;
+}
 
+.notePages{
+    font-size: 25px;
+    color: green;
+}
 .footer{
     font-size: 15px;
     margin-top: 10px;
