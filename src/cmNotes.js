@@ -19,29 +19,29 @@ function secondSemester(){
     noteContainer.classList.add('noteContainer');
     secondSem.appendChild(noteContainer);
 
-    let chapterName1 = 'chapter-1'
-    noteContainer.appendChild(createNotesThumbnail('cpm',chapterName1,'34'));
 
-    let chapterName2 = 'chapter-2'
-    noteContainer.appendChild(createNotesThumbnail('cpm',chapterName2,'46'));
+    let book1 = 'constructionProjectManagement';//it is 1 book.
+    noteContainer.appendChild(createNotesThumbnail(book1,'cpm','chapter-1','34'));
+    noteContainer.appendChild(createNotesThumbnail(book1,'cpm','chapter-2','46'));
+    noteContainer.appendChild(createNotesThumbnail(book1,'cpm','chapter-3','24'));
+    noteContainer.appendChild(createNotesThumbnail(book1,'cpm','chapter-4','9'));
+    noteContainer.appendChild(createNotesThumbnail(book1,'cpm','chapter-5','57'));
+    noteContainer.appendChild(createNotesThumbnail(book1,'cpm','chapter-6','61'));
+    noteContainer.appendChild(createNotesThumbnail(book1,'cpm','chapter-7','52'));
 
-    let chapterName3 = 'chapter-3'
-    noteContainer.appendChild(createNotesThumbnail('cpm',chapterName3,'24'));
+    let book2 = 'constructionPoliciesEnvironmentAndLaws';//it is book 2
+    noteContainer.appendChild(createNotesThumbnail(book2,'policy','chapter-1','8'));
+    noteContainer.appendChild(createNotesThumbnail(book2,'policy','chapter-2','4'));
+    noteContainer.appendChild(createNotesThumbnail(book2,'policy','chapter-3','14'));
+    noteContainer.appendChild(createNotesThumbnail(book2,'policy','chapter-4','23'));
+    noteContainer.appendChild(createNotesThumbnail(book2,'policy','chapter-5','0'));
+    noteContainer.appendChild(createNotesThumbnail(book2,'policy','chapter-6','5'));
+    noteContainer.appendChild(createNotesThumbnail(book2,'policy','chapter-7','17'));
+    noteContainer.appendChild(createNotesThumbnail(book2,'policy','chapter-8','11'));
 
-    let chapterName4 = 'chapter-4'
-    noteContainer.appendChild(createNotesThumbnail('cpm',chapterName4,'9'));
-
-    let chapterName5 = 'chapter-5'
-    noteContainer.appendChild(createNotesThumbnail('cpm',chapterName5,'57'));
-
-    let chapterName6 = 'chapter-6'
-    noteContainer.appendChild(createNotesThumbnail('cpm',chapterName6,'61'));
-
-    let chapterName7 = 'chapter-7'
-    noteContainer.appendChild(createNotesThumbnail('cpm',chapterName7,'52'));
     return secondSem;
 }
-function createNotesThumbnail(book,chapter,pages){
+function createNotesThumbnail(course,book,chapter,pages){
     const books = document.createElement('div');
     books.classList.add('books');
 
@@ -59,7 +59,7 @@ function createNotesThumbnail(book,chapter,pages){
     const bookChapter= document.createElement('p');
     bookChapter.classList.add('bookChapter');
     bookChapter.textContent = chapter;
-    var pdf =`./notes/constructionProjectManagement/${chapter}.pdf`;
+    var pdf =`./notes/${course}/${chapter}.pdf`;
     bookChapter.addEventListener('click',()=>{
         window.open(pdf);
     })
